@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762288376.32551 "splines.tex" "splines.pdf" "splines" 1762288381.31973 0
+["pdflatex"] 1762289822.90754 "splines.tex" "splines.pdf" "splines" 1762289828.75187 0
   "/home/xor/texmf/tex/latex/evan/evan.sty" 1759841284.01084 30292 5ab06a24638a57d7e0533445336a1deb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 d41d8cd98f00b204e9800998ecf8427e ""
@@ -256,9 +256,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756539060 5526391 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1756539636 3605792 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2025/texmf.cnf" 1756539007.98934 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "splines.aux" 1762288380.98794 1983 e2a9c6029abe725dbdc76c8ff9a1c44b "pdflatex"
-  "splines.pre" 1762288378.22534 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "splines.tex" 1762288370.3095 2856 42cae81fdd1db5aaaf91bcdfa9852761 ""
+  "splines.aux" 1762289828.21001 1983 e2a9c6029abe725dbdc76c8ff9a1c44b "pdflatex"
+  "splines.pre" 1762289825.2816 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "splines.tex" 1762289759.60313 2917 dba0254c951bcc77d9b027fcbe4b6d8b ""
   (generated)
   "splines.aux"
   "splines.log"

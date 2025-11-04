@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762281655.90439 "power-method.tex" "power-method.pdf" "power-method" 1762281659.88842 0
+["pdflatex"] 1762290350.03616 "power-method.tex" "power-method.pdf" "power-method" 1762290354.79326 0
   "/home/xor/texmf/tex/latex/evan/evan.sty" 1759841284.01084 30292 5ab06a24638a57d7e0533445336a1deb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -245,9 +245,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1756539060 5526391 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1756539636 3605792 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2025/texmf.cnf" 1756539007.98934 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "power-method.aux" 1762281659.5994 264 cefe196cc6c67bd4255d6efb8cc7d2bf "pdflatex"
-  "power-method.pre" 1762281657.44971 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "power-method.tex" 1762281655.19304 1247 37c47e31e4d845821dcff0e4f01013b9 ""
+  "power-method.aux" 1762290354.52118 264 cefe196cc6c67bd4255d6efb8cc7d2bf "pdflatex"
+  "power-method.pre" 1762290352.04053 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "power-method.tex" 1762290216.95491 1448 83095a8d6aaaff009dd1d641dcdfc009 ""
   (generated)
   "power-method.aux"
   "power-method.log"
