@@ -1,0 +1,83 @@
+% (c) 2009-2021 by Markus Leupold-Löwenthal
+% This file is released under CC BY-SA 4.0. Please do not apply other licenses one-way.
+% This file is also released under CC BY 4.0.
+
+% This is the style file for NIP'AJIN Solos. The main work is done by nipajin.sty,
+% which gets called here.
+
+\ProvidesFile{solo.sty}
+\ProvidesPackage{solo}
+
+\usepackage{nipajin}  % this style file is the basic red layout
+\usepackage{lettrine} % for large numbers
+\usepackage{pifont}   % for some dingbats
+
+% ------------------------------------------------------------------------------
+
+% This produces the black box at the top of the first page. Features the shots
+% logo, copyright stuff, plus some intro text.
+% 1 = copyright |\copyright\ 2009--2015, Markus Leupold-Löwenthal
+% 2 = version
+% 3 = credits: translation & co | nobody
+% 4 = cc-disclaimer
+% 5 = side text
+\newcommand{\solosbanner}[5]{
+	\backgroundtop{trueBlack}{6cm}
+	\begin{multicols}{2}\raggedbottom\color{white}
+		\noindent
+		\parbox[c][40mm][c]{\columnwidth}{\setlength{\parindent}{1em}
+
+			\centerline{\fffancy\fontsize{42pt}{48pt}\selectfont{\addfontfeature{LetterSpace=-2.0}NIP'AJIN}}
+			\vspace{4pt}
+			\centerline{\fontsize{24pt}{24pt}\selectfont%
+				\color{primary}S%
+				\hspace{7.5pt}\color{white}•\hspace{7.5pt}%
+				\color{primary}O%
+				\hspace{7.5pt}\color{white}•\hspace{7.5pt}%
+				\color{primary}L%
+				\hspace{7.5pt}\color{white}•\hspace{7.5pt}%
+				\color{primary}O%
+				\hspace{7.5pt}\color{white}•\hspace{7.5pt}%
+				\color{primary}S%
+			}
+			\centerline{\small\textbf{#1}}
+			\vspace*{6pt}
+			\centerline{\footnotesize\parbox{6cm}{\centering#2\expandafter\ifstrequal\expandafter{#3}{nobody}{}{; #3}}}
+
+			\vspace*{5mm}
+
+			\centerline{%
+				\parbox{20mm}{\fontsize{11pt}{11pt}\selectfont\textbf{CC BY-SA 4.0}}%
+				\hspace{1mm}%
+				\parbox{3cm}{\tiny\href{https://creativecommons.org/licenses/by-sa/4.0/}{\color{white}creativecommons.org/licenses/by-sa/4.0/} #4}%
+			}
+		}
+
+		\noindent
+		\parbox[c][40mm][c]{\columnwidth}{\setlength{\parindent}{1em}
+			\noindent\textit{#5}
+
+			\vspace*{6pt}
+
+			\centerline{\href{https://\soloURL}{\textbf{\soloURL}}}
+		}
+
+	\end{multicols}
+	\vspace*{2mm}
+}
+
+% Add a section, aka. room, to the solo. Will not show up in the TOC.
+% 1 - (internal) name of the label
+\newcommand\room[1]{%
+  \medskip\refstepcounter{section}%
+  %\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}\zlabel{#1}\noindent\lettrine{\thesection}{\hspace*{0.5em}}}
+
+% Reference another section, aka. room, with a small arrow.
+\newcommand\seeroom[1]{{\ding{231}\zref{#1}}}
+
+% Unified way to ask the player: do X, if successfull do Y
+\newcommand\nipajincheck[2]{\makebox{#1}: \makebox{\ding{51}\hspace{1pt}#2}}
+
+% Unified way to ask the player: do X, if successfull do Y, else do Z
+\newcommand\nipajincheckfail[3]{\makebox{#1}: \makebox{\ding{51}\hspace{1pt}#2}, \makebox{\ding{55}\hspace{1pt}#3}}

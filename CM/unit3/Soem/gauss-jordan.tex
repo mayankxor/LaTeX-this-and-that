@@ -1,0 +1,42 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsmath}
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\newcommand\numberthis{\refstepcounter{equation}\tag{\theequation}}
+\author{Mayank Rajput}
+\title{Gauss Jordan Method}
+\begin{document}
+\maketitle
+This method is used to find the inverse of a non singular matrix.
+We know that every non singular matrix $A$ has a unique inverse
+$A^{-1}$ such that 
+\[A^{-1}=\frac{\text{adj}A}{|A|}\] 
+where $\text{adj}A$ is the adjoint of $A$ defined as 
+\[\text{adj}A=\begin{bmatrix}
+  A_{11}&A_{21}&A_{31}&\cdots&A_{n1}\\
+  A_{12}&A_{22}&A_{32}&\cdots&A_{n2}\\
+  \vdots&\vdots&\vdots&\ddots&\vdots\\
+  A_{1n}&A_{2n}&A_{3n}&\cdots&A_{nn}
+\end{bmatrix}\]
+where $A_{ij}$ is the cofactor of $a_{ij}$ in $|A|$
+
+In Gauss Jordan Method, the matrix $A$ is augmented with a unit matrix of same dimension.
+So the augmented matrix for $A_{n\times n}$ will be $\left[A:I\right]_{n\times 2n}$
+\[\left[A:I\right]=\begin{bmatrix}
+  a_{11}&a_{21}&a_{31}&\vdots&1&0&\cdots&0\\
+  a_{21}&a_{22}&a_{31}&\vdots&0&1&\cdots&0\\
+  \vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots\\
+  a{n1}&a_{n2}&a_{n3}&\vdots&0&0&\cdots&1
+\end{bmatrix}\]
+The way to find inverse of $A$ is to convert the left half of augmented matrix to
+an upper triangular matrix, and then to an identity matrix.
+At the end $\left[A:I\right]$ is converted to $\left[I:A^{-1}\right]$ and inverse is
+found at the right side of the augmented matrix.
+
+For this, we move the largest element(by magnitude) of first column to the first row,
+using row interchange operation. Then move the largest second column to second row and so on.
+
+\end{document}

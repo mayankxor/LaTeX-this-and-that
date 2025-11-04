@@ -1,0 +1,62 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsmath}
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\ihead{\footnotesize\textbf\thetitle} \ohead{\footnotesize\href{https://github.com/mayankxor}{\ttfamily Github}, last compiled \today}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\newcommand\numberthis{\refstepcounter{equation}\tag{\theequation}}
+\author{Mayank Rajput}
+\title{Splines}
+\begin{document}
+\maketitle
+Spline interpolation is very powerful and widely used method for interpolation
+and has many applications. It interpolates a function between given set of points
+by means of piecewise smooth polynomials.
+\section{Linear Spline}
+for given values $y(x_i)=y_i$ for $i=0,1,2,\cdots,n$.
+We create linear functions for every subinterval.
+This is literally a graph made by joining the points with straight lines.
+The function is continous but not the slope or curvature
+\section{Quadratic spline}
+If the given set of values $y(x_i)=y_i$ for $i = 1,2,3,\cdots,n$
+has $p(x)$ as the quadratic spline function, then $p(x)$ must obey the following:
+\begin{enumerate}
+  \item
+    $y_i=p(x_i)\forall i$
+  \item
+    $p(x)$ is a quadratic for every subinterval, except possibly the first or last subinterval
+  \item
+    $p(x)$ and $p'(x)$ are continuous in $(a,b)$
+\end{enumerate}
+\subsection{Disadvantage}
+\begin{enumerate}
+  \item There might be a straight line connecting the first(or last) subinterval.
+  \item Curvature is not guaranteed to be continuous, Hence the graph may not be pleasant to the eyes ): 
+\end{enumerate}
+\section{Cubic spline}
+If the given set of values $y(x_i)=y_i$ for $i = 1,2,3,\cdots,n$
+has $p(x)$ as the cubic spline function, then $p(x)$ must obey the following:
+\begin{enumerate}
+  \item
+    $y_i=p(x_i)\forall i$
+  \item
+    $p(x)$ is a cubic polynomial for every subinterval
+  \item
+    $p(x)$, $p'(x)$ and $p''(x)$ are continuous in $(a,b)$
+\end{enumerate}
+$p''(x)$ is also written as $M_x$
+\subsection{Natural Cubic Spline}
+if $p''(x_0)=p''(x)=0$, then the subic spline $p(x)$ is said to be a natural cubic spline.
+For natural cubic splines, we have an explicit formula
+
+Say the value set $y(x_i)=y_i$ is to be interpolated for $i=0,1,2,\cdots,n$ using a natural cubic spline.
+We will have $n$ subintervals, and each subinterval will have a cubic function associated to it.
+We define the spline $p_i(x)$ for the interval $[x_{i-1},x_i]$ for $i=1,2,3,\cdots,n$.
+then
+\begin{align*}p_i(x)=&\frac{1}{6h}\left[(x_i-x)^3M_{i-1}+(x-x_{i-1})M_i\right]\\&+\frac{1}{h}(x_i-x)\left(y_{i-1}-\frac{h^2}{6}M_{i-1}\right)\\&+\frac{1}{h}(x-x_{i-1})\left(y_i-\frac{h^2}{6}M_i\right)\end{align*}
+for $1\le i\le n$,
+where \[M_{i-1}+4M_i+M_{i+1}=\frac{6}{h^2}(p_{i+1}-2p_i+p_{i-1})\] for $1\le i<n$\\
+This is only applicable if the difference in given $x$ values is constant.
+\end{document}

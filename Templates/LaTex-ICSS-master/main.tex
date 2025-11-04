@@ -1,0 +1,324 @@
+% ############################################### PREAMBLE AND CONTROL PANEL #
+
+\input{preamble}
+
+% ################################################################# DOCUMENT #
+
+\begin{document}
+\pagenumbering{gobble}
+
+% -------------------------------------------------------------- Front cover -
+
+\ifmakecovers
+\covergeometry
+  \makecoverwith\frontcoverimages
+\restoregeometry  
+\fi
+
+
+% ============================================================= FRONT MATTER =
+
+\ifmakefrontmatter
+
+% ------------------------------------------------------------------ Patitul -
+
+\cleardoublepage
+
+\begin{center}
+  %\vspace*{2cm}{\fontsize{20}{20}\selectfont\scshape\dictnameCZ\\\dictnameIS}
+  \vspace*{\stretch 1}
+  {\Huge\scshape\dictnameCZ\\\dictnameIS}
+  \vspace{\stretch 4}
+\end{center}
+
+% -------------------------------------------------------------------- Titul -
+
+\cleardoublepage
+
+\begin{center}
+  %\vspace*{2cm}{\fontsize{24}{24}\selectfont\scshape\dictnameCZ\\\dictnameIS}
+  \vspace*{\stretch 1}
+  {\HUGE\scshape\dictnameCZ\\\dictnameIS}
+  \vspace{\stretch 2}
+\end{center}
+
+% ----------------------------------------------------------------- Impresum -
+
+\clearpage
+
+\noindent\begin{minipage}[t][\textheight][t]{\textwidth}
+Autoři \textit{Islandsko-českého studijního slovníku}:\\
+  \textbf{Aleš Chejn, Ján Zaťko, Jón Gíslason}\\[\baselineskip]
+Korektury \textit{Islandsko-českého studijního slovníku}:\\
+  \textbf{Lucie Brabcová, Martina Kašparová}\\[\baselineskip]
+\ifPDF
+\else
+Autor \textit{Islandské gramatiky}:\\
+  \textbf{Vojtěch Kupča}\\[\baselineskip]
+\fi
+Poděkování:\\
+  \textbf{Dorotě Nierychlewské-Chejn, Jiřině Hanzlové, Jiřině Chejnové,
+          Simoně Petrásové,\\ Petru Mikešovi, Vojtěchu Kupčovi, 
+          Renatě Peškové Emilsson, Amiru Mulamuhici, \\ Kristýně Antonové, 
+          Ondřeji Zichovi, Samoriele, Adamu Kožouškovi}\\[\baselineskip]
+Finanční příspěvek na výtisk exemplářů určených knihovnám\\ v České republice,
+Slovenské republice a na Islandu poskytli:\\
+  \textbf{Petr Mikeš, Dorota Nierychlewska-Chejn, Jiřina Chejnová, Otta Chejn}
+  \ifPDF
+  \\[36\baselineskip]
+  \else
+  \\[33\baselineskip]
+  \fi
+\ifPDF
+\textit{Islandsko-český studijní slovník} \textcopyright\  \textbf{Aleš Chejn, Ján Zaťko, Jón Gíslason}, 2016\\[\baselineskip]
+\else
+\textit{Islandsko-český studijní slovník} \textcopyright\  \textbf{Aleš Chejn, Ján Zaťko, Jón Gíslason}, 2016\\
+\textit{Islandská gramatika} \textcopyright\  \textbf{Vojtěch Kupča}, 2016\\[\baselineskip]
+\fi
+\ifPDF
+Verze: \textbf{PDF verze} \textit{Islandsko-českého studijního slovníku} vhodná pro \textbf{\ifscreen offline prohlížení a vyhledávání\else vlastní tisk\fi}\\ volně dostupná na \url{www.hvalur.org}\\[\baselineskip]
+\else
+\textbf\ISBN\\[\baselineskip]
+\fi
+Sazba: \textbf{Aleš Chejn} v prostředí  \textbf\LaTeX\\
+Heslová část vysázena patkovým fontem \TeX\ Gyre Pagella,
+hesla bezpatkovým fontem {\phvfamily Helvetica}.\\  
+Zvláštní poděkování patří \textbf{Paolu al-Imk\=an\=\i\ Brasolin} a uživatelům  \textbf{\TeX\ - \LaTeX\ Stack Exchange}\\[\baselineskip]
+\ifPDF
+\else
+Tisk: \textbf{Tiskárna MELMEN, s.r.o., Pardubice}\\
+Vazba:  \textbf{Knihařství Vojtíšková Hrubá, Pardubice}\\
+\fi
+\end{minipage}
+
+% -------------------------------------------------------- Table of contents -
+
+\cleardoublepage 
+
+\pdfbookmark\contentsname{toc}    
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage 
+
+\fi
+
+\pagenumbering{arabic}
+\setcounter{page}{3}
+% ============================================================= INTRODUCTION =
+
+\ifinputintroduction
+
+% ------------------------------------- The study Icelandic-Czech dictionary -
+
+\chapter{O Islandsko-českém studijním slovníku}
+\input{introduction/uvod}
+
+% ------------ The history of the formation Icelandic-Czech dictionary study -
+
+\chapter{Historie tvorby Islandsko-českého studijního slovníku}
+\longchapterskip
+\input{introduction/historie}
+
+% -------------------------------------------------  Guide to the dictionary -
+
+\chapter{Průvodce po slovníku}
+\begin{multicols}{2}
+\input{introduction/instructions}
+\end{multicols}
+
+% ---------------------------------------- List of abbreviations and symbols -
+
+\chapter{Seznam použitých zkratek a symbolů}
+\begin{multicols}{2}
+\begin{description}[leftmargin=!,labelwidth=1.5cm]
+%[\breaklabel\setleftmargin{40pt}\setlabelstyle{\bfseries}
+%\addtolength{\itemsep}{-0.5\baselineskip}]
+\input{introduction/zkratky.tex}
+\end{description}
+\end{multicols}
+
+\chapter{Skrá yfir skammstafanir og tákn}
+\begin{multicols}{2}
+\begin{description}[leftmargin=!,labelwidth=1.5cm]
+%[\breaklabel\setleftmargin{40pt}\setlabelstyle{\bfseries}
+%\addtolength{\itemsep}{-0.5\baselineskip}]
+\input{introduction/zkratky_is}
+\end{description}
+\end{multicols}
+
+% ------------------------------------------------- Headword part and alphabet
+
+\chapter{Heslová část}
+\input{introduction/alphabet}
+\clearpage
+
+\fi
+
+% =========================================================== THE DICTIONARY =
+
+\ifinputletters
+
+\cleardoublepage
+
+\dictionarygeometry
+\pagestyle{myheadings}
+
+\newcommand*{\alphabetF}{%
+  a,aa,b,c,d,e,ee,f,g,h,i,ii,j,k,l,m,n,o,oo,p,r,s1,s2,t,u,uu,v,w,x,y,yy,th,ae,oe}
+\ifPDFtest
+\input{letters/ae}
+\else
+\makeatletter
+\@for\next:=\alphabetF\do{\input{letters/\next.tex}}
+\makeatother 
+\fi
+\restoregeometry
+\pagestyle{plain}
+
+\fi
+
+% ================================================================ PHONETICS =
+
+\ifinputphon
+
+\cleardoublepage
+
+\chapter{Seznam islandských fonémů}              \label{sec:phon_phonems}
+
+\input{phon/phonems}
+\clearpage
+
+%\section{Výslovnost islandských samohlásek}      \label{sec:phon_vowels}
+%\LTXtable{\columnwidth}{phon/vowels}
+%\clearpage
+
+%\section{Výslovnost islandských souhlásek}       \label{sec:phon_consonants}
+%\LTXtable{\columnwidth}{phon/consonants}
+%\clearpage
+\fi
+
+% =============================================================== MORPHOLOGY =
+
+\ifinputmorpho
+
+\cleardoublepage
+
+\chapter{Morfologický klíč}                      \label{sec:morpho}
+
+\section{Podstatné jméno, rod mužský}            \label{sec:morpho_m}
+{\small\LTXfw{morpho/m}}
+\clearpage
+
+\section{Podstatné jméno, rod ženský}            \label{sec:morpho_f}
+{\small\LTXfw{morpho/f}}
+\clearpage
+
+\section{Podstatné jméno, rod střední}           \label{sec:morpho_n}
+{\small\LTXfw{morpho/n}}
+\clearpage
+
+\section{Přídavné jméno}                         \label{sec:morpho_adj}
+{\small\LTXfw{morpho/adj}}
+\clearpage
+
+\section{Zájmeno}                                \label{sec:morpho_pron}
+{\small\LTXfw{morpho/pron}}
+ \input{morpho/pron2}
+\clearpage
+
+\section{Číslovka}                               \label{sec:morpho_num}
+ {\small\LTXfw{morpho/num}}
+\clearpage
+
+\begin{landscape}
+\section{Sloveso}                                \label{sec:morpho_v}
+{\small\LTXfw{morpho/v}}
+\end{landscape}
+
+\clearpage
+
+\fi
+
+% ============================================================== BACK MATTER =
+
+\ifmakebackmatter
+
+% ------------------------------------------------ Photographs authors index -
+
+\cleardoublepage
+%\pagestyle{empty}
+%\pagestyle{indexstyle}
+%\phantomsection
+%\addcontentsline{toc}{chapter}
+%  {Seznam autorů fotografií a ilustrací}        
+\label{sec:photo}
+\printindex[figures]
+
+% ------------------------------------------------------------- Bibliography -
+\cleardoublepage
+\chapter{Bibliografie}
+%\twocolumn
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Bibliografie}
+\begin{multicols}{2}
+\nocite{*}\printbibliography[heading=none]
+\end{multicols}
+
+% ------------------------------------------------------------------ Apendix -
+\cleardoublepage
+\onecolumn
+\ifPDF
+\else
+\chapter{Apendix: Islandská gramatika}
+\clearpage
+\covergeometry  
+\makeatletter
+\includepdf[
+  pages={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73},
+  turn=false,
+  scale=0.79,
+  keepaspectratio,
+  offset={\dimexpr(\paperwidth-\csname Gm@layoutwidth\endcsname)/2-\csname Gm@layouthoffset\endcsname\relax}
+  {\dimexpr(\paperheight-\csname  Gm@layoutheight\endcsname)/2-\csname Gm@layoutvoffset\endcsname\relax}
+   ]{gram.pdf}
+\makeatother
+\restoregeometry  
+\fi
+
+% ------------------------------------------------------------------ Tiraz Barcode -
+\pagenumbering{gobble}
+\ifPDF
+\else
+%\cleardoublepage\null\clearpage % clear to verso
+\cleardoublepage % clear to verso
+\noindent\begin{minipage}[t][\textheight][t]{\textwidth}
+\vspace*{\stretch{5}}
+
+{\Large{\textbf{Islandsko-český studijní slovník}}}\\[\baselineskip]
+  {\textbf{Aleš Chejn, Ján Zaťko, Jón Gíslason}}\\[\baselineskip]
+Vydal: \textbf{Aleš Chejn}, Husova 1674, 530 03 Pardubice \\
+e-mail: \href{mailto:achejn@gmail.com}{achejn@gmail.com}, \url{www.hvalur.org}\\
+Sazba: Aleš Chejn, \LaTeX\\
+Tisk: \textbf{Tiskárna MELMEN, s.r.o.}, Pardubice\\
+Vazba:  \textbf{Knihařství Vojtíšková Hrubá}, Pardubice\\
+první vydání, 2016\\
+1012 stran\\[\baselineskip]
+\textbf\ISBN\\[\baselineskip]
+
+\vspace*{\stretch{1}}
+\EANisbn[SC3]
+\end{minipage}
+\fi
+\fi
+
+% --------------------------------------------------------------- Back cover -
+
+\ifmakecovers
+  \cleardoublepage\null\clearpage % inner side of the cover
+\covergeometry  
+  \makecoverwith\backcoverimages
+\restoregeometry  
+\fi
+
+\end{document}
+

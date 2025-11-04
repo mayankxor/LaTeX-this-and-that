@@ -1,0 +1,276 @@
+% (c) 2009-2021 by Markus Leupold-Löwenthal
+% This file is released under CC BY-SA 4.0. Please do not apply other licenses one-way.
+
+\renewcommand{\nipajinVersion}{v1.8.2}
+
+% CHANGELOG-de
+%
+% 1.8.2
+%   - IPA Lautschrift für Aussprache
+% 1.8.1
+%   - Typos
+%   - Klarstellung improvisierte Gegenstände
+% 1.8
+%   - Attacken gelingen bei Gleichstand
+%   - minimum-Zielwert bei misslungener Verteidigung im Konflikt
+% 1.7.2
+%   - kleines Lektorat
+% 1.7.1
+%   - kleinere Umschlichtung im Text
+% 1.7
+%   - Überraschte Gegner im Konflikt
+%   - raschere Heilung
+%   - diverse Umformulierungen für bessere Lesbarkeit
+%   - "Initiative" -> "Reihenfolge", "Hintergrund" -> "Vorgeschichte", "Expertise" gestrichen
+%   - flexiblere "Mehrfachaktion" statt "Flächenangriff"
+%   - vorgegebene Vor/Nachteile von Beispielcharakteren
+% 1.6
+%   - WW zählt runter
+%   - Klarstellung der Expertise bei "keine Chance auf Erfolg"
+%   - Umbenennung Gruppenwurf auf Gruppenaktion und Klarstellung
+%   - nur mehr vereinfachte NSCs
+% 1.5
+%   - rotes layout
+%   - multi-language
+% 1.4.2
+%   - Neues Buildsystem
+%   - Layout / Logos neu
+% 1.4.1
+%   - Klarstellung Gruppenwurf während langfristigen Aktionen
+% 1.4
+%   - SL-Kapitel neu angeordnet
+%   - Gruppenwürfe neu geregelt und in den SL-Teil verfrachtet
+%   - LL-Band am Cover
+%   - nachbessern -> wiederholen
+% 1.3
+%   - Lektorat Onno
+%   - Gruppenwurf im und außerhalb des Konflikts vereinheitlicht.
+%   - Crop
+% 1.2
+%   - Beginn des Changelogs
+
+% --- language dependent typography stuff ------------------------------
+
+\renewcommand{\say}[1]{„\textit{#1}“}
+\setdefaultlanguage[spelling=new]{german}
+
+\renewcommand{\fsNormal}{\fontsize{9.75pt}{11.25pt plus 0.1pt minus 0pt}}
+\renewcommand{\fsSmall}{\fontsize{8.5pt}{9.5pt plus 0.1pt minus 0pt}}
+
+\hyphenation{Rol-len-spiel}
+\hyphenation{Blatt-hälfte}
+
+% --- pdf metadata & stuff ---------------------------------------------
+
+\hypersetup{
+	pdftitle={NIP'AJIN},
+	pdfauthor={Markus Leupold-Loewenthal},
+	pdfsubject={Ein leichtgewichtiges, freies Rollenspielsystem.},
+	pdfkeywords={nipajin, nip'ajin, Rollenspiel, System, frei, RSP, RPG}
+}
+
+\renewcommand{\backgroundlayername}{Hintergrund}
+
+% --- fine print ---------------------------------------------------------------
+
+\renewcommand{\nipajinCopyright}{\copyright\ 2009--2017, Markus Leupold-Löwenthal}
+\renewcommand{\nipajinCredits}{Lektorat: Onno Tasler}
+\renewcommand{\nipajinFineprint}{(Logos und Marken ausgenommen. Bitte nicht einweg-relizensieren.)}
+
+% --- language macros --------------------------------------------------
+
+\newcommand{\zB}{z.\,B.}
+\newcommand{\uU}{u.\,U.}
+
+% --- main texts -------------------------------------------------------
+
+\renewcommand{\nipajinSummary}{%
+	Ein unkompliziertes, universelles Rollenspielsystem von \ludusleonis.
+
+	\nipajin\ eignet sich für Einzelabenteuer und Kurzkampagnen, wird \nipajinPronounce\ ausgesprochen und ist ein Akronym für \say{Niemand ist perfekt, aber jeder irgendwie nützlich}. Es sorgt für verteiltes Rampenlicht, ohne die Charaktere in ein enges Regelkorsett zu zwingen.
+}
+
+\newcommand{\nipajinTableModifier}{%
+	\tabelle{X c}{
+		\thead{Können} & \thead{+/-} \\
+	}{
+		veritable Schwäche                   & -4 \\
+		unerfahren, sehr ungeschickt         & -2 \\
+		etwas eingerostet                    & -1 \\
+		durchschnittlich gut                 &  0 \\
+		ein wenig Übung, Hobby               & +1 \\
+		jahrelange Erfahrung, Beruf, Routine & +2 \\
+		jahrzehntelange Erfahrung, Veteran   & +4 \\
+	}
+}
+
+\newcommand{\nipajinTableTargets}{%
+	\tabelle{l c X}{
+		\thead{Schwierigkeit} & \thead{\TN} & \thead{Beispiel} \\
+	}{
+		einfach               & 2 & -- \\
+		gute Bedingungen      & 3 & gutes Werkzeug \\
+		durchschnittlich      & 4 & -- \\
+		schlechte Bedingungen & 5 & wenig Licht \\
+		schwer                & 6 & Messer jonglieren \\
+		meisterlich           & 8 & Drahtseilakt \\
+		legendär              & 12 & -- \\
+	}
+}
+
+\renewcommand{\nipajinHeadlinePlayer}{Regeln für Spieler}
+\renewcommand{\nipajinTocPlayer}{Regeln für Spieler}
+\renewcommand{\nipajinTextPlayer}{%
+	Jeder \keyword{Charakter} startet als unbeschriebenes A4-Blatt im Querformat. Dieses \keyword{Charakterblatt} wird durch eine Linie in zwei A5-Hälften geteilt, dann die rechte Hälfte in zwei A6-Viertel.
+
+	Nun kritzeln die Spieler allgemeine Charakteristika wie Name, Volk und Aussehen in die linke Hälfte, gefolgt von der \keyword{Vorgeschichte} des Charakters. Dies kann in Stichworten oder ganzen Sätzen geschehen. Die Beschreibung enthält, was ein Charakter bisher gemacht hat, und nicht, was er gut kann. Letzteres wird der Spielleiter im Spiel anhand der Vorgeschichte entscheiden. Am Charakterblatt steht dann \zB\ \say{war jahrelang Klavierträger} statt \say{ist stark}. \keyword{Ausrüstung} (\refPage{labelEquipment}) und die ggf. beherrschten \keyword{Effekte} (\refPage{labelEffects}) enthalten, was Spieler und Spielleiter für richtig befinden.
+
+	Zuletzt werden je ein W4, W6, W8, W10 und W12 auf das rechte obere Viertel gelegt. Einer wird vom Spieler zum \keyword{Widerstandswürfel} (\HD) ernannt und mit seiner höchsten Zahl nach oben in die linke Blatthälfte geschoben. Sinkt der \HD\ im Spiel unter 1, scheidet der Charakter aus.
+
+	\mysection[labelTaskresolution]{Würfelsystem}
+
+		\noindent
+		Solange es keine Zweifel gibt, blubbert die Handlung fröhlich vor sich hin. Stellt sich bei einer \keyword{Aktion} die Frage, ob sie einem Charakter (rechtzeitig) gelingt, wählt sein Spieler einen \keyword{verfügbaren Würfel} aus dem oberen Viertel des Charakterblatts und würfelt. Fällt eine Eins, ist die Aktion ein \keyword{automatischer Fehlschlag}. Ansonsten wird ein, vom Spielleiter anhand der Vorgeschichte des Charakters festgelegter \keyword{Modifikator} zum Wurf addiert.
+
+		\nipajinTableModifier
+
+		\noindent
+		Erreicht oder übertrifft das Ergebnis den, vom Spielleiter vor dem Wurf festgelegten \keyword{Zielwert} (\TN) der Aktion, gelingt diese. Eine errechnete Eins ist im Gegensatz zur gewürfelten Eins kein automatischer Fehlschlag, aber selten genug.
+
+		\nipajinTableTargets
+
+		\noindent
+		Nach dem Wurf wird der nun \keyword{verbrauchte Würfel} in das untere Viertel des Charakterblatts gelegt. Wurde ein neuer Modifikator festgelegt, sollte dieser auf dem Charakterblatt notiert werden, damit er nicht mehrfach bestimmt werden muss, \zB~\say{Laufen+1}.
+
+		Würfel, die keine Chance auf Erfolg haben, dürfen nicht benutzt bzw. verbraucht werden. Möchte ein Charakter eine erfolglose eigene oder fremde Aktion \keyword{wiederholen}, erhöht sich der Zielwert mit jedem Versuch um 1.
+
+		Sind alle Würfel eines Charakters verbraucht, muss dieser nach Maßgabe des Spielleiters kurz aussetzen und \keyword{durchatmen}. Danach werden die Würfel wieder nach oben gelegt.
+
+	\mysection[labelConflict]{Konflikte}
+
+		\noindent
+		Interessenskonflikte werden in \keyword{Runden} abgehalten, deren Länge der Spielleiter festlegt. Jede Runde darf jeder Charakter eine Aktion durchführen, \zB\ angreifen, und auf alle Aktionen seiner Gegner reagieren, \zB\ parieren. Die \HD\ der Gegner sind zu überwinden, egal ob mit oder ohne Gewalt.
+
+		Zu Beginn jeder Runde wählen alle Spieler zeitgleich je einen \keyword{Aktionswürfel} (\AD) und einen \keyword{Reaktionswürfel} (\RD) aus ihren verfügbaren Würfeln. Mit diesen bestreiten sie alle Aktionen bzw. Reaktionen der Runde. Spieler können auch freiwillig auf den \AD\ oder \RD\ verzichten. Überraschte Charaktere erhalten keinen \AD\ in der ersten Runde. Nur wer gar keine verfügbaren Würfel mehr hat, darf die Runde aussetzen, um durchzuatmen.
+
+		Die gewählten \AD\ der Spieler geben ihre \keyword{Reihenfolge} vor. Würfel mit weniger Seiten handeln zuerst (\zB\ W6 vor W8). Gleichstand entscheidet das Los.
+
+		Bei einem Angriff würfelt der Verteidiger zuerst und gibt mit seinem \RD\ einen \TN\ vor. Bei einem automatischen Fehlschlag, oder falls der Verteidiger diese Runde keinen \RD\ hat, ist er 0, sonst mindestens 1. Der Angreifer tritt nun mit seinem \AD\ gegen diesen \TN\ an. Bei einem Erfolg erleidet der Verteidiger eine \keyword{Wunde} und reduziert den \HD\ um 1. Gewaltlose Aktionen helfen ebenfalls, den Widerstand der Gegner zu brechen: Sie verursachen \keyword{Traumata}, die durch Spielsteine o.\,Ä. symbolisiert werden.
+
+		Vernachlässigt ein Spieler die Verteidigung und wählt in einer Runde keinen \RD, kann er mit einer \keyword{Mehrfachaktion} Würfe im Ausmaß bis zum halben \AD\ ansagen (zwei beim W4, drei beim W6,~\ldots). Dazu zählen \zB\ zweihändige Angriffe, Doppelschüsse, Flächenangriffe wie Rundumschläge oder Feuerbälle, das Einschüchtern von Gruppen oder Abfolgen sonstiger Aktionen. \emph{Alle} Aktionen werden pro Zusatzaktion oder -ziel um \makebox{-2} modifiziert. Auf jede Aktion darf einzeln reagiert werden.
+
+		Letztlich kann ein Charakter andere \keyword{decken}, wenn er diese Runde keinen \AD\ wählt. Er leitet dazu Angriffe in Reichweite im Ausmaß seines halben \RD\ auf sich um. Misslingt dem Deckenden eine solche Reaktion, bekommt er selbst die Wunden.
+
+		Sinkt der \HD\ eines Charakters unter 1, oder erreicht die Summe der Traumata den aktuellen \HD-Wert, ist er überwunden (tot, eingeschüchtert,~\ldots).
+
+	\mysection[labelEquipment]{Ausrüstung}
+
+		\noindent
+		Es gibt keine Ausrüstungsliste. Normale Waffen verursachen grundsätzlich eine Wunde pro Treffer, besondere oder magische Waffen zwei und Feuer- oder Explosionswaffen drei bis vier. Improvisierte Ausrüstung gibt \makebox{-1} auf den Wurf. Rüstungen geben je nach Ausführung +1 oder +2 auf den \RD.
+
+	\mysection[labelHeal]{Heilung}
+
+		\noindent
+		Nach jeder \keyword{Nachtruhe} wird durchgeatmet. Zudem kann versucht werden, zu regenerieren. Der Spieler merkt sich den Wert am \HD\ und würfelt diesen. Ist der neue Wert besser, wird der \HD\ mit diesem auf das Charakterblatt zurück gelegt, sonst mit dem ursprünglichen Wert.
+
+		\keyword{Traumata} verheilen abhängig von ihrem Ursprung nach Maßgabe des Spielleiters. Einschüchterungsversuche klingen schon am Ende der jeweiligen Szene wieder ab, Ängste, Flüche, etc. schleppen die Charaktere manchmal tage- oder wochenlang mit.
+}
+
+\renewcommand{\nipajinHeadlineEffects}{Effekte}
+\renewcommand{\nipajinTocEffects}{Effekte}
+\renewcommand{\nipajinTextEffects}{\zlabel{labelEffects}%
+	\noindent
+	Von Charakteren beherrschte Magie, Wunder, PSI-Kräfte, Superkräfte u.ä. werden \keyword{Effekte} genannt und bereits bei der Erschaffung festgelegt. Sie sind, so überhaupt im Szenario erlaubt, auch dort geregelt, berufen sich aber u.\,U. auf folgendes \nipajin-Standardsystem:
+
+	Eine \keyword{Vorbereitungszeit} (\PT) lang murmelt oder gestikuliert der Charakter. Ist sie \keyword{variabel}, wird sie vor dem Wurf vom Spieler festgelegt, \zB\ \say{eine Minute}. Am Ende der \PT\ wird gewürfelt, es gelten die üblichen \makebox{-2} pro Zusatzziel bei Flächenangriffen. Jedem Opfer steht ein Reaktionswurf zu, um dem Effekt vollständig zu entgehen. Gegenstände und opferlose Effekte haben einen vom Spielleiter festgelegten Zielwert. Bei Gelingen hält der Effekt die angegebene \keyword{Nachwirkzeit} (\FT) lang an:
+
+	\keyword{Nahkampfeffekte} verwunden wie Nah\-kampf\-waf\-fen, \zB\ \emph{Frosthand} oder \emph{Geisterschwert}. Ein Treffer verursacht eine Wunde. \PT:~1~Runde; \FT:~permanent
+
+	\keyword{Fernkampfeffekte} verwunden wie Fern\-kampf\-waf\-fen und verbrauchen pro Anwendung eine limitierte Ressource, \zB\ benötigt \emph{Magisches Geschoß} Pulver aus dem Gürtelbeutel, \emph{Feuerball} eine Art magische Handgranate. \PT:~1~Runde; \FT:~permanent
+
+	\keyword{K.\,O.-Effekte} machen Wesen handlungsunfähig, \zB\ \emph{Schlaf}, \emph{Versteinerung}, \emph{Angst} oder \emph{Bannen}. \PT:~variabel; \FT:~aufgewandte \PT
+
+	\keyword{Unterstützungen} helfen einem Wesen oder verbessern einen Gegenstand in einem Aspekt, \zB\ \emph{Feuerresistenz}, \emph{Federfall}, \emph{Barriere} oder \emph{Licht}. \PT:~variabel; \FT:~aufgewandte \PT
+
+	\keyword{Veränderungen} verformen oder bewegen langsam tote Materie bzw. Gefühle von Wesen, \zB\ \emph{Wasser-zu-Wein}, \emph{Befreunden} oder \emph{Telekinese}. \PT:~variabel; \FT:~aufgewandte \PT
+
+	\keyword{Illusionen} täuschen einen Sinn eines Wesens für ein konkretes Detail, \zB\ \emph{Katzengold}, \emph{Täuschgeräusch} oder \emph{Unsichtbarkeit}. \PT:~variabel; \FT:~aufgewandte \PT
+
+	\keyword{Eingebungen} verschaffen Wissen über Eigenschaften oder Sachverhalte, \zB\ \emph{Magie spüren}, \emph{Gedanken lesen} oder \emph{Hellsicht}. \PT:~eine Minute für Gegenwärtiges, eine Stunde für Vergangenes, ein Tag für Zukünftiges; \FT:~--
+
+	\keyword{Heileffekte} schließen Wunden oder heilen Krankheiten. \PT:~eine Stunde pro Wunde, ein Tag pro Krankheit; \FT:~permanent
+}
+
+\newcommand{\nipajinTableNSC}{%
+	\tabelle{c X}{
+	\thead{\AD/\RD} & \thead{Grundkompetenz}  \\
+	}{
+		W2  & nur in Gruppen gefährlich \\
+		W3  & blutiger Anfänger \\
+		W4  & besserer Anfänger \\
+		W6  & durchschnittlich \\
+		W8  & routiniert \\
+		W10 & gefährlich \\
+		W12 & sehr gefährlich \\
+		W20 & episch \\
+	}
+}
+
+\newcommand{\nipajinTableBestiary}{%
+	\tabelle{p{1.1cm} c c c X}{
+	\thead{Kreatur} & \thead{\HD} & \thead{\AD} & \thead{\RD} & \thead{Fähigkeiten}  \\
+	}{
+		gr. Ratte &  1 &  2 &  3 & Laufen+4, Verstecken+2 \\
+		Goblin    &  3 &  4 &  4 & Wahrnehmung+1 \\
+		Ork       &  6 &  6 &  6 & Einschüchtern+1, Kämpfen+1, Verstand-1 \\
+		Troll     & 10 &  8 &  6 & Kämpfen+1, regeneriert eine Wunde/Runde \\
+		Riese     & 20 &  8 &  8 & Kämpfen+2, Kraft+4 \\
+		Drache    & 40 & 12 & 10 & Feueratem+4, K.\,O.-Effekt-Resistenz \\
+	}
+}
+
+\renewcommand{\nipajinHeadlineGM}{Regeln für Spielleiter}
+\renewcommand{\nipajinTocGM}{Regeln für Spielleiter}
+\renewcommand{\nipajinTextGM}{%
+	\mysection[labelPCs]{Vorgeschichten}
+
+		\noindent
+		Den Vorgeschichten der Spielercharaktere (SC) kommt in \nipajin\ besondere Bedeutung zu. Gute Hintergründe umschreiben Kindheit, Ausbildung und was ein SC in den letzten Jahren hauptsächlich getan hat. Ein paar einschneidende Erlebnisse runden das Bild ab. Auch Alter und Aussehen eines SC sollten festgehalten werden.
+
+		Es liegt am jeweiligen Spielstil, wie formell eine Vorgeschichte ausfallen muss. Der Spielleiter sollte darauf achten, dass sie genügend Rückschlüsse auf die Stärken und Schwächen des SC ermöglicht, da im Zweifel auf ihrer Basis entschieden wird, ob eine Aktion leicht- oder schwerfällt. Lücken in der Vorgeschichte sollten im Einverständnis mit dem Spieler sofort geschlossen werden. Spielfertige Szenarien geben für Beispielcharaktere meist erste Vor- und Nachteile an -- diese dürfen im Spiel natürlich ergänzt werden.
+
+	\mysection[labelGroups]{Gruppenarbeit}
+
+		\noindent
+		Arbeiten bei einer Aktion mehrere -- nicht notwendiger Weise alle -- SC zusammen, kommt es zu einer \keyword{Gruppenaktion}: Die beteiligten Spieler wählen ihren jeweiligen \AD, danach ernennen sie einen SC zum Anführer. Dessen Spieler würfelt als Erster und entscheidet, ob das Ergebnis stellvertretend für alle zählt. Wenn nicht, übergibt er die Führung an einen verbleibenden SC, usw. Jeder Wurf \emph{ersetzt} den vorherigen. Eine gewürfelte Eins vereitelt die Gruppenaktion für alle und beendet diese. Nur die tatsächlich benutzten Würfel werden verbraucht.
+
+		Bei einer Gruppenaktion innerhalb eines Konflikts gilt der schlechteste Initiativewert für die ganze Gruppe. Der Gegner tritt mit seinem \RD\ gegen das Ergebnis an, ihm droht die Summe der Wunden, die alle Beteiligten einzeln verursachen würden. Gruppenaktionen lassen sich nicht mit Mehrfachaktionen kombinieren.
+
+		\keyword{Langfristige Aktionen} haben einen hohen Zielwert, \zB\ \say{Reparatur\,\TN20}. Die beteiligten SC arbeiten in mehreren Runden auf diesen Wert hin. Jede Runde, deren Länge der SL bestimmt, wird eine Gruppenaktion durchgeführt. Die Ergebnisse werden summiert, bis der \TN\ erreicht ist. Eine gewürfelte Eins vereitelt nur eine Runde, aber nicht die langfristige Aktion.
+
+	\mysection[labelNSCs]{Nichtspielercharaktere}
+
+		\noindent
+		Der Spielleiter wird den SC eine Reihe von Freunden und Feinden entgegensenden. Diese \keyword{Nichtspielercharaktere} (NSC) werden vereinfacht geregelt: Neben dem Aussehen und der Motivation, mit den SC zu interagieren, wird ihr \HD\ sowie ihre Grundkompetenz in Form eines fixen \AD\ und \RD\ festgelegt. Dabei sind auch Abstufungen wie W2 oder W3 erlaubt.
+
+		\nipajinTableNSC
+
+		\noindent
+		Daneben werden ein paar Stärken und Schwächen notiert, \zB\ Kämpfen+1 oder Geschick-2. Dabei ist zu beachten, dass NSC nicht unabsichtlich doppelt gut werden, weil sie hohe Grundkompetenz \emph{und} eine Stärke erhalten.
+
+		NSC haben gegenüber SC den Vorteil, nicht durchatmen zu müssen, da ihnen die fixen \AD/\RD\ nie ausgehen. Sie sollten zum Ausgleich etwas unterdimensioniert werden. Weiters haben Traumata für sie selten langfristige Bedeutung und werden direkt am \HD\ mitgezählt.
+
+	\mysection[labelBestiary]{Bestiarium}
+
+		\noindent
+		Die folgenden Kreaturen dienen nur der Veranschaulichung und sollen \nipajin\ nicht auf bestimmte Hintergründe festlegen.
+
+		\nipajinTableBestiary
+
+	\mysection[labelXP]{Erfahrung}
+
+		\noindent
+		\nipajin\ ist nicht darauf ausgelegt, Charaktere über lange Kampagnen wachsen zu sehen. Sollte allerdings während eines Szenarios in der Spielwelt genügend Zeit vergehen, kann der Spielleiter einen bereits festgelegten Modifikator eines SC erhöhen, wenn dies plausibel erscheint.
+
+		Die Charaktere definieren in der Regel das Niveau ihrer Umwelt. Sind sie durchschnittliche Abenteurer, sind die im Bestiarium angegebenen Beispiele gute Richtwerte für NSCs. Sind die SCs jedoch Goblins, die sich Scharen von Helden-NSCs erwehren müssen, die über ihr Lager herfallen, sind diese Helden-NSCs für die SCs vielleicht schon so mächtig wie ein Troll. Der Spielleiter sollte SC und NSC relativ zueinander betrachten. Sollten die SC über Nacht an Super\-hel\-den\-kräfte gelangen, empfiehlt es sich, nicht die Charaktere zu steigern, sondern die Werte ihrer Gegenspieler entsprechend abzusenken.
+}

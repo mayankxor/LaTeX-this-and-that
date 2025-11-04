@@ -1,0 +1,30 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsmath}
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\newcommand\numberthis{\refstepcounter{equation}\tag{\theequation}}
+\author{Mayank Rajput}
+\title{Power Method}
+\begin{document}
+\maketitle
+This method is used to find the largest eigenvalue and corresponding eigenvector
+for a matrix $A_{n\times n}$, often called the first eigenvalue.
+
+Let $\left\{\lambda_i\right\}_{i=1}^{n}$ be the eigenvalues of $A$
+with the corresponding eigenvectors being $\left\{X_i\right\}_{i=1}^n$
+This method is only applicable if all the eigenvectors are linearly independent of each other.
+So that
+\[X=\sum_{i=1}^n{c_iX_i}\]
+We take an arbitrary initial vector called $X^{(0)}_{n\times1}$ and find $AX^{(0)}$. Then
+factor out the largest number from the resultant matrix, call it $\lambda^{(0)}$.
+\[AX^{(0)}=\lambda^{(0)}X^{(1)}\]
+Now find $AX^{(1)}$ and factor out the largest number called $\lambda^{(1)}$ to leave $X^{(2)}$.
+
+Generally:
+\[AX^{(k)}=\lambda^{(k)}X^{(k+1)}\]
+We stop when $X^{(r-1)}\approx X^{(r)}$. Then $\lambda^{(r)}$ is the largest eigenvalue and
+$X^{(r)}$ the corresponding eigenvector
+\end{document}

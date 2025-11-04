@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {0}Syllabus}{2}{section.2}%
+\contentsline {section}{\numberline {1}System of Linear Algebraic Equations}{2}{section.3}%
+\contentsline {subsection}{\numberline {1.1}Existence of solution}{2}{subsection.4}%
+\contentsline {subsection}{\numberline {1.2}Gauss Elimination Method}{2}{subsection.5}%
+\contentsline {subsubsection}{\numberline {1.2.1}Division by Zero}{3}{subsubsection.6}%
+\contentsline {subsubsection}{\numberline {1.2.2}Number of operations}{3}{subsubsection.7}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

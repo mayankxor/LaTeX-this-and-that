@@ -1,0 +1,92 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath ,amssymb, amsfonts}
+\usepackage{tikz}
+\usepackage[left=2cm,right=2cm,top=1.8cm,bottom=1.6cm]{geometry}
+\usepackage[]{float}
+
+\begin{document}
+\tableofcontents
+\chapter{LIMITS}
+Lets start the chapter with an example from real world. Even if you do know something about limits, keep it aside and pretend that you have no idea that Calculus exists.
+
+We know that a speedometer is a device used to measure the speed of a vehicle at any instant of time.
+
+\section{The Velocity Problem}
+
+Imagine you take a trip to the countryside, a good one indeed. While coming back from the same route, you notice that you crossed the $100km$ marker at $2:00pm$ and $110km$ marker at $2:15pm$. Your speedometer was broken so you couldn't check your exact speed at any time. Although you weren't caught, but still the thought that you might have committed a crime by driving above the speed limit which was $80kmph$ is keeping you up at night since you are a very law obedient person(I hope).\\
+Now you want to know if you ever went above the limit at any point during the ride. Can you do it?
+\\
+
+\textit{Take a moment to ponder}
+\\
+
+Well, I assume you know the definition of \textit{speed}. Its the rate at which you move, if you're covering a distance of 1 meter every second then your speed can be called $1$ meter per second. It's just an indicator of how fast you move as time goes by.
+
+$$v=\frac{d}{t}$$
+where, $v=$ \textit{speed of an object},\\$d=$ \textit{distance travelled by that object},\\$t=$ \textit{time taken by the object to cover that distance}\\
+
+Your case isn't really different from the one just defined. You need to find your speed while the information you have is the distance you travelled($100km$ to $110km$ meaning you covered a total of $10km$) during the time interval($2:00pm$ to $2:15pm$ meaning $15$ minutes).\newpage
+Plugging the values:
+
+\begin{align*}
+v&=\frac{d}{t}\\
+&=\frac{10km}{15minutes}\\
+&=\frac{2}{3}kmpm\\
+&={40}kmph
+\end{align*}
+
+which tells you that your speed during the $15$ minutes was less than the speed limit. YAY!!!\\
+But wait. What did you just calculate? $40$\textit{ kilometres per hour} is what exactly? Is it your speed at the start of $15$ minutes? Is it your speed at the last second? Or at some time during the journey? If yes, then at what time and why is this speed so important to pop up here?
+
+Lets think about what's so special about $40kmph$ here. Imagine you were to rerun the route again at this speed such that you never changes the speed. What distance would you travel within the $15$ minutes?\\
+We can use unitary method:\\
+% Create some margin between the lines
+\begin{align*}
+40kmph&\rightarrow \textit{travelling }40\textit{ kilometres every }60\textit{ minutes}\\
+1\textit{ minute}&\rightarrow\frac{40}{60}\textit{ kilometres}\\
+15\textit{ minute}&\rightarrow\frac{40}{60}\cdot15=10\textit{ kilometres}
+\end{align*}
+
+There you go! This is what you calculated.\\
+$40$ \textit{kilometres} is the speed by which you must drive in order to cover the same distance given the same amount of time. Considering that you don't change the speed.\\
+
+This is what life is without \textit{Calculus}, the concept of speed at an instant is undefined without it. What you calculated was the \textit{average value of speed over 15 minutes time period}.
+\subsection{The Average}
+Its the value which can get your work done if you maintain the same speed along the route.\\
+How this differs from real world is that you never drive at a constant speed. There are twists and turns, peaks and valleys, speed-breakers and highways keep the speed changing over time.\\
+This average does a good job in "summing" the speed such that the moments when your speed was less than the average gets compensated with the moment when your speed was greater than the average speed.\\
+Just think about it, the average could be something like $100kmph$ but that would be a stretch since by the definition of averages, you would travel $10$ kilometres within $15$ minutes if you were travelling at $40kmph$ So going at $100kmph$ at every point throughout the journey would take you far beyond the mark.\\
+Conversely, if the average was very low, say $10kmph$ meaning you travelled at $10kmph$ throughout the route. Then you'd be short about $7.5$ kilometres at the end of $15$ minutes. So yeah, when considering a constant speed, you MUST move with the average speed otherwise you'd either cover more or less than the required distance.\\
+Lets brainstorm about the case when you're allowed to change speed during the journey. \\Lets say you keep your speed at any time $t$(represented by $v(t)$) above average the whole journey, its the same case we discussed above. In fact, the second possibility where $v(t)<v_{avg}$ is also ruled out above.\\
+Since we are dealing with variable speed, the only possibility left is that $v(t)>v_{avg}$ for some time and $v(t)<v_{avg}$ for the rest of journey.\\
+This shows that if the speed exceeds the average speed, then it MUST go under it for some time too!\\
+So in short, averages give you a birds-eye view of the scenario. A kind of 'neutral' path where you don't need to change the state and can still complete the trip under same time frame as the variable quantity does.\\
+While instantaneous values give you the exact value of speed(or any quantity for that matter) with respect to some other quantity(time in this case).\\
+
+After this realisation, its clear that you aren't necessarily innocent. The fact that your average speed is less than the speed limit does not implies that you NEVER exceeded the limit. You may have exceeded the limit for some time but then went below it later on to compensate for the extra distance covered.\\
+\subsection{The Instantaneous}
+Now you make a plan to recreate the same event and find your instantaneous speed. You clearly don't need to know your speed at every moment to determine if you were speeding or not. Just notice when you felt like you were going at highest speed and check if that speed was above speed limit. If yes then you were obviously committing a crime. If no, then you can take a sigh of relief since the speed at every other instant is guaranteed to be less than limit as well.\\
+But how would you go about converting the average velocity to instantaneous one?
+
+\textit{Pause and Ponder}
+
+Well, what is average speed? Its just the constant value of speed you must possess to get the same effects as the variable velocity. What does it depends upon? Its the time you pass onto it! You can find the value of this special velocity for any amount of time.\\
+Now, what is instantaneous speed? Its the speed at one instant. Not for the second, or minute or hour. So it doesn't really take a genius to figure out that we can achieve the instantaneous speed if we restrict the time interval of calculating average speed to very small interval near the time at which we need to find the instantaneous speed.\\
+
+Lets take an example, lets say I can calculate the average speed between any two time intervals and I want to find the instantaneous velocity at time $t=t_{0}$. Say $t_{initial}$ and $t_{final}$ be the initial and final instances of time around which we are calculating the average speed.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+
+$t_{i}$&$t_{f}$&$\delta t=t_{f}-t_{i}$&$v(t_{0})$&$v_{avg}=s/\delta t$&Description\\
+\hline\hline
+$t_{0}$&$t_{0}$+$1$&$1$&Speed at $t=t_{0}$&2&h\\
+\hline
+$t_{0}$&$t_{0}$+$0.1$&$0.1$&Speed at $t=t_{0}$&2&h\\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

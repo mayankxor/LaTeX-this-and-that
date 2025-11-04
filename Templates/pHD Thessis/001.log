@@ -1,0 +1,232 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.28)  19 JAN 2025 13:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./001.tex
+(001.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-11-02>
+
+LaTeX Warning: You have requested file `',
+               but the file provides `mydiss'.
+
+Package: mydiss 2016/07/26 v1.6 mydiss class (Michael Ummels)
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \newif\if@
+               iso
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no @ in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no @ in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no @ in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 21--27
+[]
+ []
+
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/extsizes\extbook.cls
+Document Class: extbook 1999/01/07 v1.4a NON-Standard LaTeX document class
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/base\fleqn.clo
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\skip49
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+)
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/extsizes\size9.clo
+File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+
+Runaway argument?
+@nnil ifx external@font @empty @latex@error {Font expandafter string ETC.
+! Paragraph ended before reserved@f was complete.
+<to be read again> 
+                   par 
+l.61 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Arithmetic overflow.
+<recently read> baselineskip 
+                             
+l.83   \divide\@tempdima\baselineskip
+                                     
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+)
+
+! LaTeX Error: Loading a class or package in a group.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 \RequirePackage
+                     {exscale}
+Classes and packages should only be loaded at the top level
+
+(C:\Users\Dell\AppData\Local\Programs\MiKTeX\tex/latex/base\exscale.sty
+Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `argesymbols' in version `ormal'
+(Font)                  MX/cmex/m/n --> MX/cmex/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `argesymbols' in version `old'
+(Font)                  MX/cmex/m/n --> MX/cmex/m/n on input line 57.
+big@size=dimen141
+)
+c@part=count196
+c@chapter=count197
+c@section=count198
+c@subsection=count199
+c@subsubsection=count266
+c@paragraph=count267
+c@subparagraph=count268
+c@figure=count269
+c@table=count270
+abovecaptionskip=skip50
+belowcaptionskip=skip51
+
+
+! LaTeX Error: Command \@part already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.605   \fi}
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \@chapter already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.620   \fi}
+            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+bibindent=dimen142
+
+
+! Argument of reserved@f has an extra }.
+<inserted text> 
+                par 
+l.730   \onecolumn
+                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+@nnil ifx external@font @empty @latex@error {Font expandafter string ETC.
+! Paragraph ended before reserved@f was complete.
+<to be read again> 
+                   par 
+l.730   \onecolumn
+                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten endgroup.
+<recently read> }
+                 
+l.730   \onecolumn
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten endgroup.
+<output> ...oom fi else global vsize maxdimen fi }
+                                                  
+l.730   \onecolumn
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Emergency stop.
+<output> ...oom fi else global vsize maxdimen fi }
+                                                  
+l.730   \onecolumn
+                  
+Unbalanced output routine
+
+ 
+Here is how much of TeX's memory you used:
+ 303 strings out of 473649
+ 5775 string characters out of 5718395
+ 389759 words of memory out of 5000000
+ 23496 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,1n,51p,184b,523s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

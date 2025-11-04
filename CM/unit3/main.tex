@@ -1,0 +1,90 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{amsmath}
+\makeatletter
+\@addtoreset{equation}{section} % reset equation when next section
+\makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % \theequation is section.equation
+\newcommand\numberthis{\refstepcounter{equation}\tag{\theequation}} % increase equation and write the format defined by theequation(section.equation)
+\ihead{\footnotesize\textbf\thetitle} \ohead{\footnotesize\href{https://github.com/mayankxor}{\ttfamily Github}, last compiled \today}
+\title{Computational Methods, Unit 3}
+\author{Mayank Rajput}
+\date{October $4^{th},\ 2025$}
+\begin{document}
+\maketitle
+\begin{abstract}
+  System of Linear Algebraic Equations: Existence of solution, Gauss elimination method and its computational effort, concept of Pivoting, Gauss Jordan method and its computational effort, Triangular Matrix factorization methods: Dolittle algorithm, Crout's Algorithm, Cholesky method, Eigen value problem: Power method, Approximation by Spline Function: First-Degree and second degree Splines, Natural Cubic Splines, B Splines, Interpolation and Approximation
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\addtocounter{section}{-1}
+\section{Syllabus}
+\section{System of Linear Algebraic Equations}
+A system of $m$ equations with $n$ unknowns is has the form:
+\begin{align*}
+  A_{1,1}X_1+A_{1,2}X_2+A_{1,3}X_3+\cdots+A_{1,n}X_n&=B_1\\
+  A_{2,1}X_1+A_{2,2}X_2+A_{2,3}X_3+\cdots+A_{2,n}X_n&=B_2\\
+  A_{3,1}X_1+A_{3,2}X_2+A_{3,3}X_3+\cdots+A_{3,n}X_n&=B_3\\
+  \cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdot\cdots\cdots\cdots\cdots\cdots&\cdots\cdots\\
+  A_{m,1}X_1+A_{m,2}X_2+A_{m,3}X_3+\cdots+A_{m,n}X_n&=B_m
+\end{align*}
+where $\{A_{i,j}\}_{(1,1)}^{(m,n)}$ and $\{B\}_{1}^m$ are known constants and $\{X\}_1^n$ are unknown variables such that
+all these equations are linearly independent of each other.
+Two equations are called ``linearly independent" if one of them \textbf{can't} be obtained by the other.
+For example, $3x+6y=3$ is linearly dependent with $x+2y=1$ because one can be obtained by other(factor out $3$).
+But $3x+6y=5$ and $x+2y=1$ are linearly independent.
+
+More specifically,
+\begin{align*}
+  A_1x_1+B_2x_2+A_3x_3+\cdots+A_nx_n=p\\
+  B_1x_1+B_2x_2+B_3x_3+\cdots+B_nx_n=q
+\end{align*}
+are linearly dependent iff
+\[\frac{A_1}{B_1}=\frac{A_2}{B_2}=\frac{A_3}{B_3}=\cdots=\frac{A_n}{B_n}=\frac{p}{q}\]
+Otherwise, they are linearly independent of each other.
+\subsection{Existence of solution}
+In a system of simultaneous equations with $n$ unknowns and $m$ linearly independent equations
+\begin{itemize}
+  \item{$m=n$}: There exists a \textbf{unique solution} set $\{X\}_1^n$
+  \item{$m<n$}: There exists \textbf{many sets of solution} sets. This system is called ``under determined"
+  \item{$m>n$}: A \textbf{solution set may or may not exist} in this case, its called over determined system
+\end{itemize}
+\subsection{Gauss Elimination Method}
+For $n$ unknowns, the solution set is obtained in $n-1$ steps. Each step eliminates a variable
+so after all the steps, only one variable is left, which constitutes a linear equation solvable by
+a $3^{rd}$ grader. We then substitute everything back. The $k^{th}$ variable is eliminated in the $k^{th}$ step from all equations
+with serial number $>k$.
+
+Essentially, we need to convert the square matrix $A$ in $AX=B$ into an upper triangular matrix $A'$ in $A'X=B'$
+using row operations.\\
+To eliminate $X_k$ from $i^{th}$ equation$(i>k)$, we multiply $k^{th}$ equation by $-A_{i,k}/A_{k,k}$ and add it to
+the $i^{th}$ equation. The $j^{th}$ coefficient of $i^{th}$ equation is obtained via
+\newpage
+\begin{align*}
+  A_{i,j}^{(k)}&=A_{i,j}+u^{*}A_{k,j}\\
+  b_i^{(k)}&=b_i+u^*b_k
+\end{align*}
+for $1\ge j\ge n$ where $u=-(A_{i,k}/A_{k,k})$
+
+The simplified expression for solution set is
+\[\{X\}_i=\left(b_i^{(i-1)}-\sum_{j=i+1}^{n}{A_{i,j}^{(i-1)}X_j}\right)/{A_{i,i}^{(i-1)}}\]
+\subsubsection{Division by Zero}
+To eliminate $X_k$ from $i^{th}$ equation, we multiply $k^{th}$ equation by $-A_{i,k}/A_{k,k}$. Sometimes, 
+$A_{k,k}$ can be zero. This leads to unexpected(wrong) results.
+\subsubsection{Number of operations}
+In reducing a system of $m$ equations with $n$ unknowns, the number of product operations involved are
+$\sum_{k=1}^{n-1}(n-k)(n-k+1)$. The number of subtraction operations are $\sum_{k=1}^{n-1}(n-k)(n-k+1)$ as well.
+And the number of division operations are $n-1$\\
+While in the back substitution process, the total number of operations involved are $1+2\sum_{k=1}^{n-1}n-k+1$
+
+The total number of operations involved in this method are
+\begin{align*}
+  &1+2\sum_{k=1}^{n-1}\left((n-k)^2+(n-k)+(n-k+1)\right)\\
+  =\ &1+4\sum_{k=1}^{n-1}\left(n^2-2nk+k^2+n-k+n-k+1\right)\\
+  =\ &1+2\left(\sum_{k=1}^{n-1}k^2\right)-(4n+4)\left(\sum_{k=1}^{n-1}k\right)+(2n^2+2n+2n+2)\left(\sum_{k=1}^{n-1}1\right)\\
+  =\ &1+2(n+1)^2(n-1)-2n(n-1)(n+1)+n(n-1)(2n-1)/6\\
+  =\ &2n^3/3+n^2+n/3-1
+\end{align*}
+\end{document}

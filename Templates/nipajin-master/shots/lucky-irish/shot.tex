@@ -1,0 +1,52 @@
+% (c) 2009-2021 by Markus Leupold-Löwenthal
+% This file is released under CC BY-SA 4.0. Please do not apply other licenses one-way.
+% This file is also released under CC BY 4.0.
+
+\documentclass{article}
+
+\newcommand{\fontsearchpath}{../../fonts}
+\usepackage{shot}
+
+% each language file has to re-define the following items:
+
+\newcommand{\shotCopyright}{}
+\newcommand{\shotFineprint}{}
+\newcommand{\shotSummary}{}
+\newcommand{\shotURL}{}
+
+\newcommand{\luckyirishVersion}{v0.0}
+\newcommand{\luckyirishCredits}{}
+\newcommand{\luckyirishHeadline}{}
+\newcommand{\luckyirishToc}{}
+\newcommand{\luckyirishPlayers}{}
+\newcommand{\luckyirishText}{}
+
+% Makefile will map the current language into those files
+\input{content.tex}
+\input{shot.tex}
+
+% ###########################################################################
+% ###########################################################################
+% ###########################################################################
+% ###########################################################################
+% ###########################################################################
+
+\begin{document}\fftext
+
+% ### BANNER ################################################################
+
+\shotsbanner{\shotCopyright}{\luckyirishVersion}{\luckyirishCredits}{\shotFineprint}{\shotSummary}
+
+% ### CONTENT #################################################################
+
+\mybanner{\MakeUppercase{\luckyirishHeadline}}{\luckyirishToc}
+
+\begin{multicols}{2}%
+\noindent\luckyirishPlayers
+
+\bigskip
+
+\luckyirishText
+\end{multicols}
+
+\end{document}
